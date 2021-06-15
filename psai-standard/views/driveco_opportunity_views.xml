@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="driveco_crm_lead_view_form_inherit" model="ir.ui.view">
+            <field name="name">driveco.crm.lead.view.form.inherit.product</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page name="products" string="Besoin prospect">
+                      <group name="products_list">
+                          <group name="products_list_left">
+                            <field name="x_nbre_prise_kw" string="Nbre PV (KW)"/>
+                            <field name="x_nbre_prise_renforce" string="Nbre Prise(s) renforcée(s)"/>
+                            <field name="x_nbre_prise_one" string="Nbre Bornes ONE"/>
+                            <field name="x_nbre_prise_pro" string="Nbre Bornes PRO"/>
+                            <field name="x_nbre_prise_urban" string="Nbre Bornes URBAN"/>
+                            <field name="x_nbre_prise_dc" string="Nbre Bornes DC"/>
+                          </group>
+                          <group name="products_list_right">
+                            <field name="x_prix_prise_kw" string="PV (KW)"/>
+                            <field name="x_prix_prise_renforce" string="PV Prise(s) renforcée(s)"/>
+                            <field name="x_prix_prise_one" string="PV Bornes ONE"/>
+                            <field name="x_prix_prise_pro" string="PV Bornes PRO"/>
+                            <field name="x_prix_prise_urban" string="PV Bornes URBAN"/>
+                            <field name="x_prix_prise_dc" string="PV Bornes DC"/>
+                          </group>
+                      </group>
+                    </page>
+                </xpath>
+                <xpath expr="//notebook" position="inside">
+                    <page name="suivi" string="Infos suivi Driveco">
+                      <group name="suivi_detail">
+                          <group name="suivi_detail_left">
+                            <field name="x_ingenieur_affaire" widget="many2one_avatar_employee"/>
+                            <field name="x_segment_marche" widget="selection" default="Auto"/>
+                          </group>
+                          <group name="suivi_detail_right">
+                            <field name="x_date_attribution" string="Date d'attribution de l'ingénieur d'Affaire"/>
+                            <field name="x_date_initialisation" string="Date d'initialisation"/>
+                            <field name="x_date_envoi_devis" string="Date envoi du devis"/>
+                            <field name="x_date_livraison_prevu" string="Date livraison prévue"/>
+                          </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
