@@ -19,9 +19,22 @@ from odoo.exceptions import UserError
 #             record.value2 = float(record.value) / 100
 
 
+
 class DrivecoCrmLead(models.Model):
     _inherit = 'crm.lead'
     _description = 'Ajout divers champs pour valorisation lead selon nombre de prises'
+
+
+    @api.model
+    def default_get(self, fields):
+        ret = super(DrivecoCrmLead, self).default_get(fields)
+        ret['x_prix_prise_kw'] = 1000
+        ret['x_prix_prise_renforce'] = 200
+        ret['x_prix_prise_one'] = 5000
+        ret['x_prix_prise_pro'] = 10000
+        ret['x_prix_prise_urban'] = 14000
+        ret['x_prix_prise_dc'] = 25000
+        return ret
 
     x_nbre_prise_kw = fields.Integer('Nombre prises KW')
     x_prix_prise_kw = fields.Float('Prix prise KW')
@@ -48,7 +61,7 @@ class DrivecoCrmLead(models.Model):
                                                    ('5','Immobilier'),
                                                    ('6','Home'),
                                                    ('7','Sante')],
-                        string='Segment de marché',default=0)
+                        string='Segment de marché',default='0')
 
     @api.onchange('x_nbre_prise_kw')
     def _onchange_x_nbre_prise_kw(self):

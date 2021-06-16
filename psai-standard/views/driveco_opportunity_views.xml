@@ -33,7 +33,7 @@
                       <group name="suivi_detail">
                           <group name="suivi_detail_left">
                             <field name="x_ingenieur_affaire" widget="many2one_avatar_employee"/>
-                            <field name="x_segment_marche" widget="selection" default="Auto"/>
+                            <field name="x_segment_marche" widget="selection"/>
                           </group>
                           <group name="suivi_detail_right">
                             <field name="x_date_attribution" string="Date d'attribution de l'ingénieur d'Affaire"/>
@@ -43,6 +43,20 @@
                           </group>
                         </group>
                     </page>
+                </xpath>
+            </field>
+        </record>
+        <record id="driveco_crm_lead_tree_opportunity_inherit" model="ir.ui.view">
+            <field name="name">driveco.crm.lead.tree.opportunity.inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="crm.crm_case_tree_view_oppor"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree[1]/field[@name='name']" position="after">
+                    <field name="x_ingenieur_affaire" string="Ingénieur d'affaire"/>
+                    <field name="x_date_attribution" string="Date attribution ingénieur d'affaire"/>
+                    <field name="x_date_envoi_devis" string="Date envoi devis"/>
+                    <field name="x_segment_marche" string="Segment de marché"/>
+                    <field name="x_date_initialisation" string="Date initialisation"/>
                 </xpath>
             </field>
         </record>
