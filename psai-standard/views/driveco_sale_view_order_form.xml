@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="driveco_sale_view_order_form_inherit" model="ir.ui.view">
+            <field name="name">driveco.sale.view.order.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='payment_term_id']" position="after">
+                    <field name="x_advenir_prive" string="'Advenir Privé"/>
+                    <field name="x_advenir_public" string="Advenir Public"/>
+                    <field name="x_advenir_compte_versement" string="Compte de versement"/>
+                    <field name="x_order_id" string="Devis abonnement lié"/>
+                    <field name="company_group_id" string="Groupe Client"/>
+                    <field name="opportunity_id" string="Opportunity"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

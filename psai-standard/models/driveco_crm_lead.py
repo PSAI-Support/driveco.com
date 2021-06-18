@@ -65,115 +65,54 @@ class DrivecoCrmLead(models.Model):
 
     @api.onchange('x_nbre_prise_kw')
     def _onchange_x_nbre_prise_kw(self):
-        for rec in self:
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_kw * rec.x_prix_prise_kw)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_renforce * rec.x_prix_prise_renforce)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_one * rec.x_prix_prise_one)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_pro * rec.x_prix_prise_pro)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_urban * rec.x_prix_prise_urban)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_dc * rec.x_prix_prise_dc)
+        self.update_expected_revenue_onchange()
 
     @api.onchange('x_prix_prise_kw')
     def _onchange_x_prix_prise_kw(self):
-        for rec in self:
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_kw * rec.x_prix_prise_kw)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_renforce * rec.x_prix_prise_renforce)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_one * rec.x_prix_prise_one)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_pro * rec.x_prix_prise_pro)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_urban * rec.x_prix_prise_urban)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_dc * rec.x_prix_prise_dc)
+        self.update_expected_revenue_onchange()
 
     @api.onchange('x_nbre_prise_renforce')
     def _onchange_x_nbre_prise_renforce(self):
-        for rec in self:
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_kw * rec.x_prix_prise_kw)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_renforce * rec.x_prix_prise_renforce)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_one * rec.x_prix_prise_one)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_pro * rec.x_prix_prise_pro)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_urban * rec.x_prix_prise_urban)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_dc * rec.x_prix_prise_dc)
+        self.update_expected_revenue_onchange()
 
     @api.onchange('x_prix_prise_renforce')
     def _onchange_x_prix_prise_renforce(self):
-        for rec in self:
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_kw * rec.x_prix_prise_kw)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_renforce * rec.x_prix_prise_renforce)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_one * rec.x_prix_prise_one)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_pro * rec.x_prix_prise_pro)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_urban * rec.x_prix_prise_urban)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_dc * rec.x_prix_prise_dc)
+        self.update_expected_revenue_onchange()
 
     @api.onchange('x_nbre_prise_one')
     def _onchange_x_nbre_prise_one(self):
-        for rec in self:
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_kw * rec.x_prix_prise_kw)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_renforce * rec.x_prix_prise_renforce)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_one * rec.x_prix_prise_one)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_pro * rec.x_prix_prise_pro)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_urban * rec.x_prix_prise_urban)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_dc * rec.x_prix_prise_dc)
+        self.update_expected_revenue_onchange()
 
     @api.onchange('x_prix_prise_one')
     def _onchange_x_prix_prise_one(self):
-        for rec in self:
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_kw * rec.x_prix_prise_kw)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_renforce * rec.x_prix_prise_renforce)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_one * rec.x_prix_prise_one)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_pro * rec.x_prix_prise_pro)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_urban * rec.x_prix_prise_urban)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_dc * rec.x_prix_prise_dc)
+        self.update_expected_revenue_onchange()
 
     @api.onchange('x_nbre_prise_pro')
     def _onchange_x_nbre_prise_pro(self):
-        for rec in self:
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_kw * rec.x_prix_prise_kw)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_renforce * rec.x_prix_prise_renforce)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_one * rec.x_prix_prise_one)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_pro * rec.x_prix_prise_pro)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_urban * rec.x_prix_prise_urban)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_dc * rec.x_prix_prise_dc)
+        self.update_expected_revenue_onchange()
 
     @api.onchange('x_prix_prise_pro')
     def _onchange_x_prix_prise_pro(self):
-        for rec in self:
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_kw * rec.x_prix_prise_kw)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_renforce * rec.x_prix_prise_renforce)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_one * rec.x_prix_prise_one)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_pro * rec.x_prix_prise_pro)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_urban * rec.x_prix_prise_urban)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_dc * rec.x_prix_prise_dc)
+        self.update_expected_revenue_onchange()
 
     @api.onchange('x_nbre_prise_urban')
     def _onchange_nbre_prise_urban(self):
-        for rec in self:
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_kw * rec.x_prix_prise_kw)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_renforce * rec.x_prix_prise_renforce)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_one * rec.x_prix_prise_one)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_pro * rec.x_prix_prise_pro)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_urban * rec.x_prix_prise_urban)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_dc * rec.x_prix_prise_dc)
+        self.update_expected_revenue_onchange()
+
     @api.onchange('x_prix_prise_urban')
     def _onchange_x_prix_prise_urban(self):
-        for rec in self:
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_kw * rec.x_prix_prise_kw)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_renforce * rec.x_prix_prise_renforce)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_one * rec.x_prix_prise_one)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_pro * rec.x_prix_prise_pro)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_urban * rec.x_prix_prise_urban)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_dc * rec.x_prix_prise_dc)
+        self.update_expected_revenue_onchange()
 
     @api.onchange('x_nbre_prise_dc')
     def _onchange_nbre_prise_dc(self):
-        for rec in self:
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_kw * rec.x_prix_prise_kw)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_renforce * rec.x_prix_prise_renforce)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_one * rec.x_prix_prise_one)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_pro * rec.x_prix_prise_pro)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_urban * rec.x_prix_prise_urban)
-            rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_dc * rec.x_prix_prise_dc)
+        self.update_expected_revenue_onchange()
+
 
     @api.onchange('x_prix_prise_dc')
     def _onchange_prix_prise_dc(self):
+        self.update_expected_revenue_onchange()
+
+    def update_expected_revenue_onchange(self):
         for rec in self:
             rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_kw * rec.x_prix_prise_kw)
             rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_renforce * rec.x_prix_prise_renforce)
@@ -181,4 +120,3 @@ class DrivecoCrmLead(models.Model):
             rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_pro * rec.x_prix_prise_pro)
             rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_urban * rec.x_prix_prise_urban)
             rec.expected_revenue = rec.expected_revenue + (rec.x_nbre_prise_dc * rec.x_prix_prise_dc)
-
