@@ -26,6 +26,9 @@
         # 'security/ir.model.access.csv',
         'views/driveco_opportunity_views.xml',
         'views/driveco_sale_view_order_form.xml',
+        'views/driveco_marque_view.xml',
+        'views/driveco_advenir_prive_view.xml',
+        'views/driveco_advenir_public_view.xml',
         'views/templates.xml',
     ],
     # only loaded in demonstration mode

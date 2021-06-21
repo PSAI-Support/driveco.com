@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+    <record id='driveco_advenir_public_action' model='ir.actions.act_window'>
+        <field name="name">ADVENIR public</field>
+        <field name="res_model">driveco.advenirpublic</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="ADVENIR public" id="advenir_public_base_menu" />
+    <menuitem name="ADVENIR public" id="driveco_advenir_public_menu" parent="advenir_public_base_menu" action="driveco_advenir_public_action"/>
+
+    <!-- Form View -->
+    <record id="driveco_advenir_public_view_form" model="ir.ui.view">
+        <field name="name">Driveco advenir public Form</field>
+        <field name="model">driveco.advenirpublic</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="driveco_advenir_public_view_tree" model="ir.ui.view">
+        <field name="name">Driveco advenir public List</field>
+        <field name="model">driveco.advenirpublic</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    </data>
+</odoo>
