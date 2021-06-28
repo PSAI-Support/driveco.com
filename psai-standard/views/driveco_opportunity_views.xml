@@ -34,6 +34,7 @@
                           <group name="suivi_detail_left">
                             <field name="x_ingenieur_affaire" widget="many2one_avatar_employee"/>
                             <field name="x_segment_marche" widget="selection"/>
+                            <field name="x_marque_opportunity" string="Marque"/>
                           </group>
                           <group name="suivi_detail_right">
                             <field name="x_date_attribution" string="Date d'attribution de l'ingénieur d'Affaire"/>
@@ -59,6 +60,7 @@
                     <field name="x_devis_envoye_id" string="Devis envoyé"/>
                     <field name="x_segment_marche" string="Segment de marché"/>
                     <field name="x_date_initialisation" string="Date initialisation"/>
+                    <field name="x_marque_opportunity" string="Marque"/>
                 </xpath>
             </field>
         </record>
