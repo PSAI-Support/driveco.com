@@ -29,7 +29,10 @@
         'views/driveco_marque_view.xml',
         'views/driveco_advenir_prive_view.xml',
         'views/driveco_advenir_public_view.xml',
+        'views/driveco_portal_task_template.xml',
+        'views/driveco_res_partner_tree_inherit.xml',
         'views/templates.xml',
+        'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode
     'demo': [

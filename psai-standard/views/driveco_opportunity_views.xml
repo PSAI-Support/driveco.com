@@ -39,6 +39,7 @@
                             <field name="x_date_attribution" string="Date d'attribution de l'ingénieur d'Affaire"/>
                             <field name="x_date_initialisation" string="Date d'initialisation"/>
                             <field name="x_date_envoi_devis" string="Date envoi du devis"/>
+                            <field name="x_devis_envoye_id" string="Devis envoyé"/>
                             <field name="x_date_livraison_prevu" string="Date livraison prévue"/>
                           </group>
                         </group>
@@ -55,6 +56,7 @@
                     <field name="x_ingenieur_affaire" string="Ingénieur d'affaire"/>
                     <field name="x_date_attribution" string="Date attribution ingénieur d'affaire"/>
                     <field name="x_date_envoi_devis" string="Date envoi devis"/>
+                    <field name="x_devis_envoye_id" string="Devis envoyé"/>
                     <field name="x_segment_marche" string="Segment de marché"/>
                     <field name="x_date_initialisation" string="Date initialisation"/>
                 </xpath>

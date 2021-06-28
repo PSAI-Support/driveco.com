@@ -62,6 +62,7 @@ class DrivecoCrmLead(models.Model):
                                                    ('6','Home'),
                                                    ('7','Sante')],
                         string='Segment de marché',default='0')
+    x_devis_envoye_id = fields.Char('Devis envoyé')
 
     @api.onchange('x_nbre_prise_kw')
     def _onchange_x_nbre_prise_kw(self):

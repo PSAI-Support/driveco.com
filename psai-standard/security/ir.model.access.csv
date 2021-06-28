@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_c:\odoo\local-addons\driveco.com\psai-standard_c:\odoo\local-addons\driveco.com\psai-standard,c:\odoo\local-addons\driveco.com\psai-standard.c:\odoo\local-addons\driveco.com\psai-standard,model_c:\odoo\local-addons\driveco.com\psai-standard_c:\odoo\local-addons\driveco.com\psai-standard,base.group_user,1,1,1,1
+access_driveco_advenir_prive,driveco_advenir_prive,psai-standard.model_driveco_advenirprive,base.group_user,1,1,1,1
+access_driveco_advenir_public,driveco_advenir_public,psai-standard.model_driveco_advenirpublic,base.group_user,1,1,1,1
+access_driveco_marque,driveco_advenir_marque,psai-standard.model_driveco_marque,base.group_user,1,1,1,1

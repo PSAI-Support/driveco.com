@@ -1,0 +1,31 @@
+<odoo>
+
+    <template id="portal_my_tasks_inherit" inherit_id="project.portal_my_tasks">
+        <xpath expr="//thead/tr" position="inside">
+            <th>Nom du client</th>
+            <th>Rue</th>
+            <th>Rue 2</th>
+            <th>C.P</th>
+            <th>Ville</th>
+        </xpath>
+        <xpath expr="//tbody//tr" position="inside">
+            <td>
+                <span t-esc="task.partner_id.name" />
+            </td>
+            <td>
+                <span t-esc="task.partner_id.street" />
+            </td>
+            <td>
+                <span t-esc="task.partner_id.street2"/>
+            </td>
+            <td>
+                <span t-esc="task.partner_id.zip"/>
+            </td>
+             <td>
+                <span t-esc="task.partner_id.city"/>
+            </td>
+            </xpath>
+
+    </template>
+
+</odoo>
