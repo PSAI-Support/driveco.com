@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='driveco_marque_action' model='ir.actions.act_window'>
+        <field name="name">Gestion des marques</field>
+        <field name="res_model">driveco.marque</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Les Marques" id="marque_base_menu" />
+    <menuitem name="Marques" id="driveco_marque_menu" parent="marque_base_menu" action="driveco_marque_action"/>
+
+    <!-- Form View -->
+    <record id="driveco_marque_view_form" model="ir.ui.view">
+        <field name="name">Driveco marque Form</field>
+        <field name="model">driveco.marque</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="driveco_marque_view_tree" model="ir.ui.view">
+        <field name="name">Driveco marque List</field>
+        <field name="model">driveco.marque</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    </odoo>

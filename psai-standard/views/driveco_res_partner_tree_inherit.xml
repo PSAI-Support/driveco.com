@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="driveco_res_partner_tree_inherit" model="ir.ui.view">
+            <field name="name">driveco.res.partner.tree.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                     <field name="x_marque" optional="hide" readonly="1"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="driveco_res_partner_form_inherit" model="ir.ui.view">
+            <field name="name">driveco.res.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="8"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='vat']" position="after">
+                     <field name="x_marque"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

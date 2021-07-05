@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='driveco_advenir_prive_action' model='ir.actions.act_window'>
+        <field name="name">ADVENIR PRIVE</field>
+        <field name="res_model">driveco.advenirprive</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="ADVENIR PRIVE" id="advenir_prive_base_menu" />
+    <menuitem name="ADVENIR PRIVE" id="driveco_advenir_prive_menu" parent="advenir_prive_base_menu" action="driveco_advenir_prive_action"/>
+
+    <!-- Form View -->
+    <record id="driveco_advenir_prive_view_form" model="ir.ui.view">
+        <field name="name">Driveco advenir prive Form</field>
+        <field name="model">driveco.advenirprive</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="driveco_advenir_prive_view_tree" model="ir.ui.view">
+        <field name="name">Driveco advenir prive List</field>
+        <field name="model">driveco.advenirprive</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    </odoo>
