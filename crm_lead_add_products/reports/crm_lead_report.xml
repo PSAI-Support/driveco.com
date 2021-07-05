@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_report_crm_lead" model="ir.actions.report">
+            <field name="name">List articles</field>
+            <field name="model">crm.lead</field>
+            <field name="report_type">qweb-pdf</field>
+            <field name="report_name">crm_lead_add_products.report_crm_lead</field>
+            <field name="report_file">crm_lead_add_products.report_crm_lead</field>
+            <field name="print_report_name">'crm_lead_products_%s' % (object.name)</field>
+            <field name="binding_model_id" eval="False"/>
+            <!-- <field name="binding_model_id" ref="crm.model_crm_lead"/> -->
+            <field name="binding_type">report</field>
+        </record>
+
+
+        <template id="report_crm_lead">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="doc">
+                    <t t-call="crm_lead_add_products.report_crm_lead_document" t-lang="doc.partner_id.lang"/>
+                </t>
+            </t>
+        </template>
+
+        <template id="report_crm_lead_document">
+            <t t-call="web.external_layout">
+                <t t-set="doc" t-value="doc.with_context(lang=doc.partner_id.lang)" />
+                <div class="">
+                    <div class="m-0 mb-1 p-0">
+                        <span t-field="doc.partner_id.name"/>
+                    </div>
+                    <h3 class="my-2">
+                        Address:
+                    </h3>
+                    <div class="m-0 p-0">
+                        <span t-field="doc.partner_id.street"/>
+                    </div>
+                    <div class="m-0 p-0">
+                        <span t-field="doc.partner_id.zip"/> - <span t-field="doc.partner_id.city"/>
+                    </div>
+                    <div class="m-0 p-0">
+                        <span t-field="doc.partner_id.country_id"/>
+                    </div>
+                </div>
+
+                <div class="page">
+                    <h3 class="my-4">Products:</h3>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Qty</th>
+                                <th>Price unit</th>
+                                <th>Price total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <t t-set="total" t-value="0"/>
+                            <t t-foreach="doc.order_line_ids" t-as="order_line">
+                                <t t-set="total" t-value="total + order_line.price_total"/>
+                                <tr>
+                                    <td class="text-left">
+                                        <span t-field="order_line.product_template_id"/>
+                                    </td>
+                                    <td class="text-left">
+                                        <span t-field="order_line.quantity"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="order_line.price_unit" t-options="{'widget': 'monetary', 'display_currency': (company_id or res_company).currency_id}"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="order_line.price_total" t-options="{'widget': 'monetary', 'display_currency': (company_id or res_company).currency_id}"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                    <div class="row">
+                        <div class="col-4 offset-8">
+                            <div class="p-2">
+                                <table class="table table-bordered">
+                                    <tr>
+                                        <td>Total : </td>
+                                        <td>
+                                            <span t-esc="total" t-options="{'widget': 'monetary', 'display_currency': (company_id or res_company).currency_id}"/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="page-break-before: always">
+                        <h2> New page ! </h2>
+                    </div>
+                </div>
+            </t>
+        </template>
+    </data>
+</odoo>

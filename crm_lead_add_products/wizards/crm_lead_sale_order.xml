@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="crm_lead_sale_order_wizard_view" model="ir.ui.view">
+            <field name="name">crm.lead.sale.order.wizard.view</field>
+            <field name="model">crm.lead.sale.order</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="product_line_ids"/>
+                    </group>
+                </form>
+                <footer>
+                    <button name="create_quotation" type="object" string="Create" class="oe_highlight"/>
+                    <button icon="fa-times" special="cancel" string="Cancel"/>
+                </footer>
+            </field>
+        </record>
+
+        <record id="crm_lead_sale_order_line_view" model="ir.ui.view">
+            <field name="name">crm.lead.sale.order.line.view</field>
+            <field name="model">crm.lead.sale.order.line</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="product_template_id"/>
+                    <field name="qty"/>
+                    <field name="unit_price"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="crm_lead_sale_order_wizard" model="ir.actions.act_window">
+            <field name="name">Transform in quotation</field>
+            <field name="res_model">crm.lead.sale.order</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="crm_lead_sale_order_wizard_view"/>
+            <field name="target">new</field>
+            <field name="binding_model_id" ref="crm.model_crm_lead"/>
+        </record>
+    </data>
+</odoo>
