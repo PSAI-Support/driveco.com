@@ -32,7 +32,7 @@
                     <page name="suivi" string="Infos suivi Driveco">
                       <group name="suivi_detail">
                           <group name="suivi_detail_left">
-                            <field name="x_ingenieur_affaire" widget="many2one_avatar_employee"/>
+                            <field name="x_ingenieur_affaire" widget="many2one_avatar_user"/>
                             <field name="x_segment_marche" widget="selection"/>
                             <field name="x_marque_opportunity" string="Marque"/>
                           </group>
