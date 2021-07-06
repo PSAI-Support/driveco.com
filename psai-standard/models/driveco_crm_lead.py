@@ -36,23 +36,23 @@ class DrivecoCrmLead(models.Model):
         ret['x_prix_prise_dc'] = 25000
         return ret
 
-    x_nbre_prise_kw = fields.Integer('Nombre prises KW')
-    x_prix_prise_kw = fields.Float('Prix prise KW')
-    x_nbre_prise_renforce = fields.Integer('Nombre prises renforcées')
-    x_prix_prise_renforce = fields.Float('Prix prise renforcée')
-    x_nbre_prise_one = fields.Integer('Nombre prises Borne ONE')
-    x_prix_prise_one = fields.Float('Prix prise Borne ONE')
-    x_nbre_prise_pro = fields.Integer('Nombre prises Borne PRO')
-    x_prix_prise_pro = fields.Float('Prix prise Borne PRO')
-    x_nbre_prise_urban = fields.Integer('Nombre prises Borne URBAN')
-    x_prix_prise_urban = fields.Float('Prix prise Borne URBAN')
-    x_nbre_prise_dc = fields.Integer('Nombre prises Borne DC')
-    x_prix_prise_dc = fields.Float('Prix prise Borne DC')
-    x_ingenieur_affaire = fields.Many2one("res.users","Ingénieur affaire",required=True)
-    x_date_attribution = fields.Datetime('Date attribution Ingénieur Affaire')
-    x_date_initialisation = fields.Datetime('Date initialisation')
-    x_date_envoi_devis = fields.Datetime('Date envoi devis')
-    x_date_livraison_prevu = fields.Datetime('Date livraison prévue')
+    x_nbre_prise_kw = fields.Integer('Nombre prises KW',tracking=True)
+    x_prix_prise_kw = fields.Float('Prix prise KW',tracking=True)
+    x_nbre_prise_renforce = fields.Integer('Nombre prises renforcées',tracking=True)
+    x_prix_prise_renforce = fields.Float('Prix prise renforcée',tracking=True)
+    x_nbre_prise_one = fields.Integer('Nombre prises Borne ONE',tracking=True)
+    x_prix_prise_one = fields.Float('Prix prise Borne ONE',tracking=True)
+    x_nbre_prise_pro = fields.Integer('Nombre prises Borne PRO',tracking=True)
+    x_prix_prise_pro = fields.Float('Prix prise Borne PRO',tracking=True)
+    x_nbre_prise_urban = fields.Integer('Nombre prises Borne URBAN',tracking=True)
+    x_prix_prise_urban = fields.Float('Prix prise Borne URBAN',tracking=True)
+    x_nbre_prise_dc = fields.Integer('Nombre prises Borne DC',tracking=True)
+    x_prix_prise_dc = fields.Float('Prix prise Borne DC',tracking=True)
+    x_ingenieur_affaire = fields.Many2one("res.users","Ingénieur affaire",required=True,tracking=True)
+    x_date_attribution = fields.Datetime('Date attribution Ingénieur Affaire',tracking=True)
+    x_date_initialisation = fields.Datetime('Date initialisation',tracking=True)
+    x_date_envoi_devis = fields.Datetime('Date envoi devis',tracking=True)
+    x_date_livraison_prevu = fields.Datetime('Date livraison prévue',tracking=True)
     x_segment_marche = fields.Selection(selection=[('0','Auto'),
                                                    ('1','Retail'),
                                                    ('2','Hotelerie'),
@@ -61,7 +61,7 @@ class DrivecoCrmLead(models.Model):
                                                    ('5','Immobilier'),
                                                    ('6','Home'),
                                                    ('7','Sante')],
-                        string='Segment de marché',default='0')
+                        string='Segment de marché',default='0',tracking=True)
     x_devis_envoye_id = fields.Char('Devis envoyé')
     x_marque_opportunity =  fields.Many2one( related="partner_id.x_marque", string='Marque', store=True)
 

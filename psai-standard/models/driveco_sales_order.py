@@ -7,11 +7,11 @@ class DrivecoSaleOrder(models.Model):
     _inherit = 'sale.order'
     _description = 'Ajout des champs Advenir , compte versement, lien vers commande liée'
 
-    x_advenir_prive = fields.Many2one('driveco.advenirprive','Advenir Privé')
-    x_advenir_public = fields.Many2one('driveco.advenirpublic','Advenir Public')
-    x_advenir_compte_versement = fields.Selection([('driveco','Driveco'),('client','Client')],'Compte versement',default="driveco")
-    x_order_id = fields.Many2one('sale.order',string='commande fils')
-    x_marque_order = fields.Many2one( related="partner_id.x_marque", string='Marque', store=True)
+    x_advenir_prive = fields.Many2one('driveco.advenirprive','Advenir Privé',tracking=True)
+    x_advenir_public = fields.Many2one('driveco.advenirpublic','Advenir Public',tracking=True)
+    x_advenir_compte_versement = fields.Selection([('driveco','Driveco'),('client','Client')],'Compte versement',default="driveco",tracking=True)
+    x_order_id = fields.Many2one('sale.order',string='commande fils',tracking=True)
+    x_marque_order = fields.Many2one( related="partner_id.x_marque", string='Marque', store=True,tracking=True)
 
     def write(self, values):
         result = super(DrivecoSaleOrder, self).write(values)
