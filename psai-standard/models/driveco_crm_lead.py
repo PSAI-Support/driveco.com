@@ -68,7 +68,8 @@ class DrivecoCrmLead(models.Model):
 
     @api.onchange('x_ingenieur_affaire')
     def _onchange_x_ingenieur_affaire(self):
-        self.x_date_attribution = datetime.datetime.today()
+        if self.x_ingenieur_affaire:
+            self.x_date_attribution = datetime.datetime.today()
 
     @api.onchange('x_nbre_prise_kw')
     def _onchange_x_nbre_prise_kw(self):
