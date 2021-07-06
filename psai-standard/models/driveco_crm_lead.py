@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import datetime
 
 from odoo import models, fields, api
 from odoo.exceptions import UserError
@@ -64,6 +65,10 @@ class DrivecoCrmLead(models.Model):
                         string='Segment de marché',default='0',tracking=True)
     x_devis_envoye_id = fields.Char('Devis envoyé')
     x_marque_opportunity =  fields.Many2one( related="partner_id.x_marque", string='Marque', store=True)
+
+    @api.onchange('x_ingenieur_affaire')
+    def _onchange_x_nbre_prise_kw(self):
+        self.x_date_attribution = datetime.date.today()
 
     @api.onchange('x_nbre_prise_kw')
     def _onchange_x_nbre_prise_kw(self):
