@@ -48,7 +48,7 @@ class DrivecoCrmLead(models.Model):
     x_prix_prise_urban = fields.Float('Prix prise Borne URBAN')
     x_nbre_prise_dc = fields.Integer('Nombre prises Borne DC')
     x_prix_prise_dc = fields.Float('Prix prise Borne DC')
-    x_ingenieur_affaire = fields.Many2one("hr.employee","Ingénieur affaire",required=True)
+    x_ingenieur_affaire = fields.Many2one("res.users","Ingénieur affaire",required=True)
     x_date_attribution = fields.Datetime('Date attribution Ingénieur Affaire')
     x_date_initialisation = fields.Datetime('Date initialisation')
     x_date_envoi_devis = fields.Datetime('Date envoi devis')
