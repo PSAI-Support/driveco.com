@@ -67,7 +67,7 @@ class DrivecoCrmLead(models.Model):
     x_marque_opportunity =  fields.Many2one( related="partner_id.x_marque", string='Marque', store=True)
 
     @api.onchange('x_ingenieur_affaire')
-    def _onchange_x_nbre_prise_kw(self):
+    def _onchange_x_ingenieur_affaire(self):
         self.x_date_attribution = datetime.date.today()
 
     @api.onchange('x_nbre_prise_kw')
